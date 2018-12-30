@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="confucius" />
+        <module name="Confucius-Classify" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="confucius" target="1.8" />
+      <module name="Confucius-Classify" target="1.8" />
+      <module name="graduation" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
