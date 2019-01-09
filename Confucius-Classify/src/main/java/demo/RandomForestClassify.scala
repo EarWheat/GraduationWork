@@ -22,15 +22,15 @@ object RandomForestClassify {
     val conf = new SparkConf().setAppName("RandomForest").setMaster("local[6]")
     val sc = new SparkContext(conf)
 
-    val rawData = sc.textFile("data/covtype_data.csv")
+    val rawData = sc.textFile("../graduation-work/Confucius-Classify/src/main/java/data/Iris.csv")
 
     val data = rawData.map { line =>
 
       val values = line.split(',').map(_.toDouble)
 
-      val featureVector = Vectors.dense(values.init)
-
       val label = values.last - 1
+
+      val featureVector = Vectors.dense(values.init)
 
       LabeledPoint(label, featureVector)
 
@@ -39,13 +39,13 @@ object RandomForestClassify {
     val splits = data.randomSplit(Array(0.7, 0.15, 0.15))
     val (trainingData, cvData, testData) = (splits(0), splits(1),splits(2))
 
-    val numClasses = 50
+    val numClasses = 10
     val categoricalFeaturesInfo = Map[Int, Int]()
     val numTrees = 20 // Use more in practice.
     val featureSubsetStrategy = "auto" // Let the algorithm choose.
     val impurity = "entropy"
-    val maxDepth = 20
-    val maxBins = 300
+    val maxDepth = 10
+    val maxBins = 100
 
 
     val model = RandomForest.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo,
@@ -81,7 +81,7 @@ object RandomForestClassify {
     println("========================================================================================")
 
     // Save and load model
-    model.save(sc, "model/RandomForestClassificationModel_covtype")
+    model.save(sc, "../graduation-work/Confucius-Classify/src/main/java/model/RandomForestModel_Iris")
 
   }
 

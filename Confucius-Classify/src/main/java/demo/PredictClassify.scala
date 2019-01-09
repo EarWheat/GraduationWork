@@ -26,6 +26,9 @@ object PredictClassify {
 
     val vector = Vectors.dense(input.split(',').map(_.toDouble))
 
+    val data = input.split(",").map(_.toDouble);
+
+    val v = Vectors.dense(data);
 
     println("样例被预测类别: " + model.predict(vector))
   }
