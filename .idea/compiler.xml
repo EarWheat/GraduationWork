@@ -7,13 +7,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="confucius" />
+        <module name="Confucius-Back" />
         <module name="Confucius-Classify" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="confucius" target="1.8" />
+      <module name="Confucius-Back" target="1.7" />
       <module name="Confucius-Classify" target="1.8" />
       <module name="graduation" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="confucius" options="-parameters" />
+    </option>
   </component>
 </project>
