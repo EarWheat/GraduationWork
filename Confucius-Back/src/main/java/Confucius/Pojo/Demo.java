@@ -1,4 +1,4 @@
-package Confucius.Dao;
+package Confucius.Pojo;
 
 public class Demo {
     private Integer id;

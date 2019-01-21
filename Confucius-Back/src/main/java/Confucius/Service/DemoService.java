@@ -1,4 +1,8 @@
 package Confucius.Service;
 
-public class DemoService {
+
+import Confucius.Pojo.Demo;
+public interface DemoService {
+    Demo getById(int id);
+
 }

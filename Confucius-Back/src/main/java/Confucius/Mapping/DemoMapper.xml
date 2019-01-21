@@ -9,6 +9,6 @@
     <select id="getById" resultMap="BaseDemoMap" parameterType="java.lang.Integer">
         SELECT *
         FROM test
-        WHERE id = #{id, jdbcType = INTEGER}
+        WHERE id = #{id}
     </select>
 </mapper>
