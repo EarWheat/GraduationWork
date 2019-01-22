@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Confucius-Web:war">
+    <output-path>$PROJECT_DIR$/Confucius-Back/Confucius-Web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Confucius-Web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Confucius-Web.war">
+      <element id="artifact" artifact-name="Confucius-Web:war exploded" />
+    </root>
+  </artifact>
+</component>

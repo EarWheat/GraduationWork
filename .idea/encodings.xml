@@ -3,5 +3,8 @@
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/Confucius" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Confucius-Back" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Confucius-Back/Confucius-Web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Confucius-Common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Confucius-Parent" charset="UTF-8" />
   </component>
 </project>
