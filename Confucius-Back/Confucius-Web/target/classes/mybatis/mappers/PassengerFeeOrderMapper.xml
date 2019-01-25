@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.confucius.mapper.UserInfoMapper">
+
+    <select id="selectPassengerFeeOrderByOrderId" resultType="com.confucius.pojo.UserInfo">
+		SELECT * FROM g_sync_intercepted_spam WHERE order_id = #{orderId} AND event = #{event} ORDER BY _create_time DESC limit #{limit};
+	</select>
+
+</mapper>
