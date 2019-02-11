@@ -5,9 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/Confucius-Back/Confucius-Back.iml" filepath="$PROJECT_DIR$/Confucius-Back/Confucius-Back.iml" />
       <module fileurl="file://$PROJECT_DIR$/Confucius-Classify/Confucius-Classify.iml" filepath="$PROJECT_DIR$/Confucius-Classify/Confucius-Classify.iml" />
       <module fileurl="file://$PROJECT_DIR$/Confucius-Common/Confucius-Common.iml" filepath="$PROJECT_DIR$/Confucius-Common/Confucius-Common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Confucius-Parent/gandalf-parent.iml" filepath="$PROJECT_DIR$/Confucius-Parent/gandalf-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/Confucius-Back/Confucius-Web/Confucius-Web.iml" filepath="$PROJECT_DIR$/Confucius-Back/Confucius-Web/Confucius-Web.iml" />
       <module fileurl="file://$PROJECT_DIR$/Confucius/confucius.iml" filepath="$PROJECT_DIR$/Confucius/confucius.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Confucius-Parent/gandalf-parent.iml" filepath="$PROJECT_DIR$/Confucius-Parent/gandalf-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/graduation-work.iml" filepath="$PROJECT_DIR$/.idea/graduation-work.iml" />
     </modules>
   </component>

@@ -9,12 +9,12 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Confucius/pom.xml" />
         <option value="$PROJECT_DIR$/Confucius-Classify/pom.xml" />
         <option value="$PROJECT_DIR$/Confucius-Back/pom.xml" />
         <option value="$PROJECT_DIR$/ConfuciusParent/pom.xml" />
         <option value="$PROJECT_DIR$/Confucius-Common/pom.xml" />
         <option value="$PROJECT_DIR$/Confucius-Parent/pom.xml" />
+        <option value="$PROJECT_DIR$/Confucius/pom.xml" />
       </list>
     </option>
   </component>

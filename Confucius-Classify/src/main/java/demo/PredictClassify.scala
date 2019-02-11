@@ -20,15 +20,15 @@ object PredictClassify {
     val conf = new SparkConf().setAppName("PredictClassify").setMaster("local[6]")
     val sc = new SparkContext(conf)
 
-    val model = RandomForestModel.load(sc, "model/myRandomForestClassificationModel_covtype")
+    val model = RandomForestModel.load(sc, "../GraduationWork/Confucius-Classify/src/main/java/model/RandomForestModel_Iris")
 
-    val input = "2447,53,23,95,57,977,226,185,82,666,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"
+    val input = "5.1,3.5,1.4,0.2"
 
     val vector = Vectors.dense(input.split(',').map(_.toDouble))
 
-    val data = input.split(",").map(_.toDouble);
-
-    val v = Vectors.dense(data);
+//    val data = input.split(",").map(_.toDouble);
+//
+//    val v = Vectors.dense(data);
 
     println("样例被预测类别: " + model.predict(vector))
   }
