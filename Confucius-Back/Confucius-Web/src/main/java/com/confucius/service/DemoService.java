@@ -1,6 +1,6 @@
 package com.confucius.service;
 
-import com.confucius.Dao.DemoDao;
+import com.confucius.dao.DemoDao;
 import com.confucius.pojo.UserInfo;
 import org.springframework.stereotype.Service;
 

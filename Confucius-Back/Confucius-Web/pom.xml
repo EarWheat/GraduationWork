@@ -17,8 +17,6 @@
     <url>http://www.example.com</url>
 
     <dependencies>
-        <!-- <dependency> <groupId>com.gandalf.</groupId> <artifactId>gandalf-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version> </dependency> -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>

@@ -24,7 +24,7 @@ object PredictClassify {
     val sc = new SparkContext(sparkConf)
     val ssc = new StreamingContext(sc, Duration(5000))
     ssc.checkpoint("file:///usr/local/spark/mycode/kafka/checkpoint") //这里表示把检查点文件写入分布式文件系统HDFS，所以要启动Hadoop
-    val topics = Set("test") //我们需要消费的kafka数据的topic
+    val topics = Set("graduation") //我们需要消费的kafka数据的topic
     val kafkaParam = Map(
       "metadata.broker.list" -> "localhost:9092") // kafka的broker list地址
 
@@ -55,7 +55,7 @@ object PredictClassify {
 
   def sendResultStream(result: Double) = {
     val BROKER_LIST = "localhost:9092"
-    val TOPIC = "result"
+    val TOPIC = "graduationCallBack"
 
 
     /**

@@ -1,4 +1,4 @@
-package com.confucius.Dao;
+package com.confucius.dao;
 
 import com.confucius.mapper.UserInfoMapper;
 import com.confucius.pojo.UserInfo;

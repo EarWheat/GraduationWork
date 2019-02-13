@@ -1,6 +1,8 @@
 package com.graduation.lzl.controller.api;
 
 import com.alibaba.fastjson.JSONObject;
+import com.graduation.lzl.pojo.HttpResult;
+import com.graduation.lzl.service.ApiService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,10 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author liuzhaolu
@@ -26,11 +32,17 @@ public class ProducerController {
     @Value("${TOPIC}")
     private static String topic;
 
+    @Value("${URL}")
+    private static String url;
+
     @Value("${KEY}")
     private String key;
 
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
+
+    @Resource
+    private ApiService apiService;
 
     //Kafka发送消息
     /**
@@ -48,9 +60,26 @@ public class ProducerController {
     }
 
     //Kafka接受消息
-    @KafkaListener(id = "t1", topics = "graduationCallBack")
+    @KafkaListener(id = "key", topics = "graduationCallBack")
     public void callBack(ConsumerRecord<?, ?> cr) throws Exception {
+        logger.info("graduationCallBack");
         logger.info("{} - {} : {}", cr.topic(), cr.key(), cr.value());
+        logger.info(cr.topic()+"============="+cr.toString()+"================"+cr.key()+"==============="+cr.value());
+        Map<String, String> map = new HashMap<>();
+        map.put(cr.key().toString(),cr.value().toString());
+        HttpResult response = null;
+        try {
+            response = apiService.doPost(url,map);
+            JSONObject object = JSONObject.parseObject(response.getData());
+            if (object.getString("errno").equals("0")) {
+                logger.info("{}", object);
+            } else {
+                logger.error("http response error||"+object.get("data"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            logger.error("http response error");
+        }
     }
 
 }
