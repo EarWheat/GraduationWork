@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 @RequestMapping("Iris")
 @Controller
@@ -26,15 +28,23 @@ public class IrisController {
 
     @ResponseBody
     @RequestMapping(value = "putIrisInfo", method = RequestMethod.POST)
-    public JsonResult putIris(HttpServletRequest request, @RequestBody IrisRequest irisRequest) {
+    public JsonResult putIris(HttpServletRequest request, HttpServletResponse response) {
         try {
 //            irisService.putInfo(irisRequest);
-            logger.info(irisRequest.getKey());
-            logger.info("=====================");
-            logger.info(irisRequest.getValue());
-            System.out.println(irisRequest.getKey());
-            System.out.println("=================");
-            System.out.println(irisRequest.getValue());
+//            logger.info(irisRequest.getKey());
+//            logger.info("=====================");
+//            logger.info(irisRequest.getValue());
+//            System.out.println(irisRequest.getKey());
+//            System.out.println("=================");
+//            System.out.println(irisRequest.getValue());
+            System.out.println("==============================");
+            System.out.println(request);
+            Map<String, String[]> params = request.getParameterMap();
+            for(String key: params.keySet()){
+                System.out.println(key+"======================"+params.get(key));
+            }
+            Object object = params.get("Test Data");
+            System.out.println(object.toString());
             return JsonResult.ok();
         } catch (Exception e) {
             e.printStackTrace();

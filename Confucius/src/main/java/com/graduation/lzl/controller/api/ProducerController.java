@@ -1,6 +1,7 @@
 package com.graduation.lzl.controller.api;
 
 import com.alibaba.fastjson.JSONObject;
+import com.graduation.lzl.Constant.Kafka;
 import com.graduation.lzl.pojo.HttpResult;
 import com.graduation.lzl.service.ApiService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -32,8 +33,6 @@ public class ProducerController {
     @Value("${TOPIC}")
     private static String topic;
 
-    @Value("${URL}")
-    private static String url;
 
     @Value("${KEY}")
     private String key;
@@ -54,8 +53,8 @@ public class ProducerController {
      */
     @RequestMapping("/sendMsg")
     private JSONObject sendMsg(@RequestBody JSONObject params){
-        logger.info("topic:{}||key:{}||message:{}",topic,key,params.toJSONString());
-        kafkaTemplate.send(topic, key, params.toJSONString());
+        logger.info("topic:{}||key:{}||message:{}",Kafka.topic,Kafka.key,params.toJSONString());
+        kafkaTemplate.send(Kafka.topic, Kafka.key, params.toJSONString());
         return params;
     }
 
@@ -65,11 +64,11 @@ public class ProducerController {
         logger.info("graduationCallBack");
         logger.info("{} - {} : {}", cr.topic(), cr.key(), cr.value());
         logger.info(cr.topic()+"============="+cr.toString()+"================"+cr.key()+"==============="+cr.value());
-        Map<String, String> map = new HashMap<>();
-        map.put(cr.key().toString(),cr.value().toString());
+        Map<String, Object> map = new HashMap<>();
+        map.put("Test Data",cr.value().toString());
         HttpResult response = null;
         try {
-            response = apiService.doPost(url,map);
+            response = apiService.doPost(Kafka.url,map);
             JSONObject object = JSONObject.parseObject(response.getData());
             if (object.getString("errno").equals("0")) {
                 logger.info("{}", object);
