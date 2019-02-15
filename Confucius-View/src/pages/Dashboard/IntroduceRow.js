@@ -30,22 +30,22 @@ const IntroduceRow = memo(({ loading, visitData }) => (
           </Tooltip>
         }
         loading={loading}
-        total={() => <Yuan>126560</Yuan>}
+        total={() => <span>126,568,754,240</span>}
         footer={
           <Field
             label={<FormattedMessage id="app.analysis.day-sales" defaultMessage="Daily Sales" />}
-            value={`￥${numeral(12423).format('0,0')}`}
+            value={`${numeral(12423).format('0,0')}`}
           />
         }
         contentHeight={46}
       >
         <Trend flag="up" style={{ marginRight: 16 }}>
           <FormattedMessage id="app.analysis.week" defaultMessage="Weekly Changes" />
-          <span className={styles.trendText}>12%</span>
+          <span className={styles.trendText}>2%</span>
         </Trend>
         <Trend flag="down">
           <FormattedMessage id="app.analysis.day" defaultMessage="Daily Changes" />
-          <span className={styles.trendText}>11%</span>
+          <span className={styles.trendText}>4%</span>
         </Trend>
       </ChartCard>
     </Col>
@@ -86,16 +86,15 @@ const IntroduceRow = memo(({ loading, visitData }) => (
             <Icon type="info-circle-o" />
           </Tooltip>
         }
-        total={numeral(6560).format('0,0')}
+        total={numeral(12423).format('0,0')}
         footer={
           <Field
             label={
-              <FormattedMessage
-                id="app.analysis.conversion-rate"
-                defaultMessage="Conversion Rate"
-              />
+              <Trend flag="down">
+                <FormattedMessage id="app.analysis.day" defaultMessage="Daily Changes" />
+                <span className={styles.trendText}>4%</span>
+              </Trend>
             }
-            value="60%"
           />
         }
         contentHeight={46}

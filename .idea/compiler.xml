@@ -19,7 +19,6 @@
       <module name="Confucius-Common" target="1.7" />
       <module name="Confucius-Parent" target="1.7" />
       <module name="Confucius-Web" target="1.7" />
-      <module name="gandalf-parent" target="1.7" />
       <module name="graduation" target="1.8" />
     </bytecodeTargetLevel>
   </component>

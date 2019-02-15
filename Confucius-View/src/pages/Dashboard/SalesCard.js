@@ -7,11 +7,12 @@ import { Bar } from '@/components/Charts';
 
 const { RangePicker } = DatePicker;
 const { TabPane } = Tabs;
+const trafficKind = ["http","ftp","P2P","SMTP"]
 
 const rankingListData = [];
 for (let i = 0; i < 7; i += 1) {
   rankingListData.push({
-    title: formatMessage({ id: 'app.analysis.test' }, { no: i }),
+    title: trafficKind[i],
     total: 323234,
   });
 }
@@ -48,7 +49,7 @@ const SalesCard = memo(
           tabBarStyle={{ marginBottom: 24 }}
         >
           <TabPane
-            tab={<FormattedMessage id="app.analysis.sales" defaultMessage="Sales" />}
+            tab={<FormattedMessage id="app.analysis.traffic" defaultMessage="Sales" />}
             key="sales"
           >
             <Row>
@@ -58,7 +59,7 @@ const SalesCard = memo(
                     height={295}
                     title={
                       <FormattedMessage
-                        id="app.analysis.sales-trend"
+                        id="app.analysis.traffic-trend"
                         defaultMessage="Sales Trend"
                       />
                     }
